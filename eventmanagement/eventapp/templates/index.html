@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="{%static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <img id="logo"src="https://www.efuturex.com/static/assets/img/EFUTUREX-Logo.png" alt="Efuturex logo">
+        <nav>
+            <button><a class="nav-link" href="">Home</a></button>
+            <button><a class="nav-link" href="">Login</a></button>
+            <button><a class="nav-link" href="">Register</a></button>
+        </nav>
+    </header>
+    <section id="events">
+        {% for event in events %}
+        <div class="event-card" id="event-card1">
+            <h1 style="padding-top: 60px; " class="event-title">{{event.event_title}}</h1>
+            <p>{{event.location}}</p>
+            <p style="padding-bottom:50px ;">{{event.date}}</p>
+            <p>{{event.description}}</p>
+            <a href="./detail1.html" class="details-btn" >Details</a>
+        </div>
+        {% endfor %}
+
+    </section>
+    <footer>
+        © 2023 Event Registration System
+    </footer>
+</body>
+</html>
