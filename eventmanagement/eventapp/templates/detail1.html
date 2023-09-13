@@ -16,25 +16,29 @@
             <button><a class="nav-link" href="">Register</a></button>
         </nav>
     </header>
-    <form >
-        <section id="event" style="margin-top: 36px; height: fit-content;">
-            <div class="event-card" id="event-card2" style="padding-bottom: 10px;">
-                <h2>{{event.event_title}}</h2>
+    
+    <section id="event" style="margin-top: 36px; height: fit-content;">
+        <div class="event-card" id="event-card2" style="padding-bottom: 10px;">
+            <h2>{{event.event_title}}</h2>
                 
-                <p>Location: {{event.location}}</p>
-                <p>Date: {{event.date}}</p>
-                <p>Description: {{event.description}}</p>
-                <h4 style="font-family: Arial, Helvetica, sans-serif;">Apply for this event: </h4>
-                <label for="Name">Full Name: </label>
-                <input type="text" placeholder="Enter your name"><br>
+            <p>Location: {{event.location}}</p>
+            <p>Date: {{event.date}}</p>
+            <p>Description: {{event.description}}</p>
+            <h4 style="font-family: Arial, Helvetica, sans-serif;">Apply for this event: </h4>
+            <form action="{%url 'detail1' event.pk %}" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <!-- <label for="Name">Full Name: </label>
+                &nbsp;<input type="text" placeholder="Enter your name"><br>
                 <label for="Email">Email ID: </label>
-                <input type="email" placeholder="Enter your email id"><br>
-                <label for="Phone">Phone Number: </label>
-                <input type="tel" placeholder="Enter your phone number"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="Enter your email id"><br>
+                <label for="Phone">Phone No.: </label>
+                <input type="tel" placeholder="Enter your phone number"><br> -->
                 <input type="submit" value="Apply">
-            </div>
-        </section>
-    </form>
+            </form>
+        </div>
+    </section>
+    
     <footer style="position: relative; bottom:0;">
         © 2023 Event Registration System
     </footer>

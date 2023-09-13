@@ -23,7 +23,7 @@
             <p>Location: {{event.location}}</p>
             <p style="padding-bottom:50px ;">Date: {{event.date}}</p>
             <p>Description: {{event.description}}</p>
-            <a href="{% url 'detail1' %}" class="details-btn" >Details</a>
+            <a href="{% url 'detail1' pk=event.pk  %}" class="details-btn" >Details</a>
         </div>
         {% endfor %}
 
