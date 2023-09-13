@@ -20,10 +20,10 @@
         {% for event in events %}
         <div class="event-card" id="event-card1">
             <h1 style="padding-top: 60px; " class="event-title">{{event.event_title}}</h1>
-            <p>{{event.location}}</p>
-            <p style="padding-bottom:50px ;">{{event.date}}</p>
-            <p>{{event.description}}</p>
-            <a href="./detail1.html" class="details-btn" >Details</a>
+            <p>Location: {{event.location}}</p>
+            <p style="padding-bottom:50px ;">Date: {{event.date}}</p>
+            <p>Description: {{event.description}}</p>
+            <a href="{% url 'detail1' %}" class="details-btn" >Details</a>
         </div>
         {% endfor %}
 

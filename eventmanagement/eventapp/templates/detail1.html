@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{%static 'style.css' %}">
 </head>
 <body>
     <header>
@@ -16,13 +17,13 @@
         </nav>
     </header>
     <form >
-        <section id="event" style="margin-top: 36px;">
+        <section id="event" style="margin-top: 36px; height: fit-content;">
             <div class="event-card" id="event-card2" style="padding-bottom: 10px;">
-                <h2>Cyber Security</h2>
+                <h2>{{event.event_title}}</h2>
                 
-                <p>Location: CET </p>
-                <p>Date: 20 September 2023</p>
-                <p>Description: This is a free workshop for cyber security</p>
+                <p>Location: {{event.location}}</p>
+                <p>Date: {{event.date}}</p>
+                <p>Description: {{event.description}}</p>
                 <h4 style="font-family: Arial, Helvetica, sans-serif;">Apply for this event: </h4>
                 <label for="Name">Full Name: </label>
                 <input type="text" placeholder="Enter your name"><br>

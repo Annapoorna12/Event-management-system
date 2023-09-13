@@ -10,3 +10,9 @@ def index(request):
         'events' : events 
     })
 
+def eventdetail(request, pk):
+    event_single=Event.objects.get(pk=pk)
+    context = {
+        'event':event_single
+    }
+    return render(request,'detail1.html',context)
